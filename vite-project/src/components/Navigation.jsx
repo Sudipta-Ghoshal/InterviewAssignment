@@ -50,11 +50,15 @@ import { Menu, X } from "lucide-react";
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="fixed z-999 top-0 w-full bg-white py-2 border-t border-solid border-[#eee]">
+    <nav
+      className="fixed z-999 top-0 w-full bg-white py-2 border-t border-solid border-[#eee] shadow-2xs"
+      data-aos="fade-down"
+      data-aos-duration="700"
+    >
       <div className="relative mx-auto flex flex-wrap items-center justify-between px-3 container">
         <div className="flex min-h-11.25 flex-wrap items-center gap-6.5 flex-1">
           <a href="#" className="logo">
-            <img src={logo} alt="" alt="Logo" />
+            <img src={logo} alt="Logo" />
           </a>
 
           <ul className="hidden lg:flex flex-wrap items-center gap-7 mx-auto">
@@ -84,7 +88,7 @@ export default function Navigation() {
                           <li key={item}>
                             <a
                               href="#"
-                              className="block text-[14px] font-normal leading-5.5 tracking-[0.03rem] text-[#686e7d] transition-all duration-300 ease-in-out hover:text-[#6c7fd8]"
+                              className="block text-[14px] font-normal leading-5.5 tracking-[0.03rem] text-[#686e7d] transition-all duration-300 ease-in-out hover:text-[#6c7fd8] hover:translate-x-1.5"
                             >
                               {item}
                             </a>
@@ -107,7 +111,7 @@ export default function Navigation() {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className="border-t lg:hidden absolute mt-2 top-full left-0 w-full bg-white shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+            <div className="border-t border-t-gray-200 lg:hidden absolute mt-2 top-full left-0 w-full bg-white shadow-[0_8px_24px_rgba(0,0,0,0.08)] animate-fade">
               <ul className="flex flex-col p-4">
                 <li className="py-2">Home</li>
                 <li className="py-2">Products</li>
@@ -118,9 +122,13 @@ export default function Navigation() {
           )}
         </div>
 
-        <div className="hidden  mt-2.5 lg:flex h-11.25 w-45 items-center rounded-[10px] border border-solid border-[#eee] bg-white px-3 text-[14px] text-[#777] min-[992px]:mt-0">
+        <div className="relative hidden lg:flex items-center h-11 w-45 rounded-[10px] border border-[#eee] bg-white px-3 text-sm text-[#777]">
           <LocationIcon />
-          Surat
+          <select className="focus-visible:outline-none block flex-1 h-full w-full cursor-pointer bg-transparent pl-4 text-sm text-[#777]">
+            <option>Surat</option>
+            <option>Baroda</option>
+            <option>Vadodara</option>
+          </select>
         </div>
 
         <button
@@ -137,7 +145,7 @@ export default function Navigation() {
 function LocationIcon() {
   return (
     <svg
-      class="svg-icon m-2.5 w-6.25 h-6.25 align-middle"
+      className="svg-icon w-6.25 h-6.25 align-middle"
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -145,12 +153,12 @@ function LocationIcon() {
       <path
         d="M511.614214 958.708971c-21.76163 0-41.744753-9.781784-54.865586-26.862811L222.50156 626.526383c-3.540639-4.044106-5.872754-7.978718-7.349385-10.461259-41.72838-58.515718-63.959707-127.685078-63.959707-199.699228 0.87288-193.650465 162.903184-351.075891 361.209691-351.075891 198.726064 0 360.40435 157.49194 360.40435 351.075891-0.839111 72.190159-23.070438 140.856052-64.345494 199.053522-1.962701 3.288906-4.312212 7.189749-7.735171 11.098779L566.479799 931.847184c-13.120832 17.080004-33.103956 26.861788-54.865585 26.861787zM273.525654 580.51956a33.707706 33.707706 0 0 1 2.63399 3.037173L511.278569 890.00931 747.068783 583.556733c0.435928-0.569982 0.889253-1.124614 1.358951-1.669013l2.51631-4.102434c0.285502-0.453325 0.587378-0.89744 0.889253-1.325182 33.507138-46.921659 51.577702-102.416578 52.248991-160.487158 0-155.294902-130.839931-281.95565-291.679105-281.95565-160.571069 0-291.780413 126.72931-292.484448 282.501073 0 57.450457 17.802458 112.811322 51.460022 159.933549l2.90312 4.580318c0.418532 0.73678-0.186242 0.032746-0.756223-0.512676z m476.059439 0.100284v0z m0.066515-0.058329c-0.016373 0.016373-0.033769 0.025583-0.033769 0.041956 0.001023-0.016373 0.017396-0.025583 0.033769-0.041956z m0.051166-0.041955a0.227174 0.227174 0 0 0-0.050142 0.041955c0.016373-0.016373 0.032746-0.033769 0.050142-0.041955z"
         fill="#444444"
-        class="fill-[#6c7fd8]"
+        className="fill-[#6c7fd8]"
       ></path>
       <path
         d="M512 577.206094c-90.000803 0-163.222455-73.221652-163.222455-163.222455s73.221652-163.222455 163.222455-163.222455S675.222455 323.982836 675.222455 413.983639s-73.222675 163.222455-163.222455 163.222455z m0-240.538355c-42.634006 0-77.3159 34.68087-77.3159 77.3159s34.68087 77.3159 77.3159 77.3159 77.3159-34.681894 77.3159-77.3159-34.681894-77.3159-77.3159-77.3159z"
         fill="#00D8A0"
-        class="fill-[#6c7fd8]"
+        className="fill-[#6c7fd8]"
       ></path>
     </svg>
   );

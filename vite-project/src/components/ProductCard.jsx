@@ -1,9 +1,13 @@
 import { Heart, Eye, Repeat, ShoppingBag, Star } from "lucide-react";
 import { getImgUrl } from "../utils/img-utility";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, animationDelay = 0 }) {
   return (
-    <div className="group">
+    <div
+      className="group"
+      data-aos="fade-up"
+      data-aos-delay={animationDelay}
+    >
       <div
         className="
           overflow-hidden

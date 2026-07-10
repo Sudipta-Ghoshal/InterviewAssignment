@@ -45,7 +45,7 @@ export default function Countdown() {
   }, []);
 
   return (
-    <div className="inline-flex items-center rounded-[10px] border border-solid border-[#eee] bg-white px-5 py-2.5 shadow-sm">
+    <div className="justify-center inline-flex items-center rounded-[10px] border border-solid border-[#eee] bg-white px-5 py-2.5 shadow-sm">
       <div className="flex items-baseline gap-1">
         <span className="font-quicksand text-[20px] font-bold text-[#3d4750]">
           {timeLeft.days}

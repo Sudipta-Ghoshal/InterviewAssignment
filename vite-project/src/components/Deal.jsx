@@ -6,8 +6,8 @@ export default function Deal() {
   return (
     <section className="section-deal overflow-hidden py-12.5 max-[1199px]:py-8.75">
       <div className="container px-3 mx-auto">
-        <div className="section-title bb-deal mb-5 pb-5 z-5 relative flex justify-between max-[991px]:pb-0 max-[991px]:flex-col max-[991px]:justify-center max-[991px]:text-center aos-init aos-animate">
-          <div className="section-detail max-[991px]:mb-3">
+        <div className="section-title bb-deal mb-5 pb-5 z-5 relative flex justify-between max-[991px]:pb-0 max-[991px]:flex-col max-[991px]:justify-center max-[991px]:text-center">
+          <div className="section-detail max-[991px]:mb-3" data-aos="fade-up">
             <h2 className="bb-title font-quicksand mb-0 p-0 text-[25px] font-bold text-[#3d4750] relative inline capitalize leading-none tracking-[0.03rem] max-[767px]:text-[23px]">
               Day of the <span className="text-[#6c7fd8]">deal</span>
             </h2>
@@ -15,13 +15,19 @@ export default function Deal() {
               Don't wait. The time will never be just right.
             </p>
           </div>
-          <Countdown />
+          <div data-aos="fade-left" data-aos-delay="120">
+            <Countdown />
+          </div>
         </div>
       </div>
 
       <div className="mx-auto grid gap-6 px-3 sm:grid-cols-2 lg:grid-cols-4  container">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {products.map((product, index) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            animationDelay={index * 120}
+          />
         ))}
       </div>
     </section>

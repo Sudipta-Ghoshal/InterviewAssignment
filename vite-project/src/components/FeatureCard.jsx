@@ -25,17 +25,22 @@ export default function FeatureCard() {
     <section className="overflow-hidden py-12.5 max-[1199px]:py-8.75">
       <div className="mx-auto px-3 container">
         <div className="flex w-full flex-wrap">
-          {featureCards.map((card) => (
-            <div className="mb-6 w-full px-3 min-[992px]:w-[50%]" key={card.id}>
+          {featureCards.map((card, index) => (
+            <div
+              className="mb-6 w-full px-3 min-[992px]:w-[50%]"
+              key={card.id}
+              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+              data-aos-delay={index * 150}
+            >
               <article
-                className={`${card.background} relative overflow-hidden rounded-[20px] p-7.5 h-full`}
+                className={`${card.background} relative overflow-hidden rounded-[20px] p-7.5 h-full sine-wave group`}
               >
                 <div className="relative z-1 flex justify-between gap-5 max-[480px]:flex-col">
                   <div className="flex items-center justify-center px-3 max-[480px]:mb-3 max-[480px]:p-0">
                     <img
                       src={card.image}
                       alt={card.imageAlt}
-                      className="h-70 w-70 max-w-full object-contain max-[1399px]:h-57.5 max-[1399px]:w-57.5 max-[1199px]:h-35 max-[1199px]:w-35 max-[991px]:h-70 max-[991px]:w-70 max-[767px]:h-50 max-[767px]:w-50 max-[575px]:h-auto max-[575px]:w-full max-[480px]:w-[calc(100%-70px)]"
+                      className="h-70 w-70 max-w-full object-contain max-[1399px]:h-57.5 max-[1399px]:w-57.5 max-[1199px]:h-35 max-[1199px]:w-35 max-[991px]:h-70 max-[991px]:w-70 max-[767px]:h-50 max-[767px]:w-50 max-[575px]:h-auto max-[575px]:w-full max-[480px]:w-[calc(100%-70px)] group-hover:scale-105 transition-all duration-400 ease-in-out"
                     />
                   </div>
 

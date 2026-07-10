@@ -2,15 +2,18 @@ import HeroImage from "../assets/hero.png";
 
 export default function Hero() {
   return (
-    <section className="relative mb-12.5 overflow-hidden bg-[#f8f8fb] py-12.5 max-[1199px]:mb-8.75">
+    <section className="relative mb-12.5 overflow-hidden bg-[#f8f8fb] py-15.5 max-[1199px]:mb-8.75">
       <div className="mx-auto px-3 container">
-        <div className="flex w-full flex-wrap items-center">
-          <div className="order-2 mb-6 w-full px-3 min-[992px]:order-1 min-[992px]:w-[50%]">
-            <div className="flex h-full flex-col items-start justify-center max-[991px]:items-center">
-              <p className="mb-5 font-Poppins text-[18px] font-light leading-7 tracking-[0.03rem] text-[#777] max-[1199px]:mb-2.5 max-[1199px]:text-[16px]">
+        <div className="flex w-full flex-col md:flex-row items-center gap-10 justify-between">
+          <div
+            className="order-2 w-full px-3 md:order-1 "
+            data-aos="fade-right"
+          >
+            <div className="flex h-full flex-col space-y-5 justify-center items-center md:items-start">
+              <p className="font-Poppins text-[18px] font-light leading-7 tracking-[0.03rem] text-[#777] max-[1199px]:mb-2.5 max-[1199px]:text-[16px]">
                 Flat 30% Off
               </p>
-              <h1 className="mb-5 font-quicksand text-[50px] font-bold leading-[1.2] tracking-[0.03rem] text-[#3d4750] max-[1199px]:mb-2.5 max-[1199px]:text-[38px] max-[991px]:text-center max-[767px]:text-[40px] max-[575px]:text-[35px] max-[420px]:text-[30px] max-[360px]:text-[28px]">
+              <h1 className="font-quicksand text-[50px] font-bold leading-[1.2] tracking-[0.03rem] text-[#3d4750] max-[1199px]:mb-2.5 max-[1199px]:text-[38px] max-[991px]:text-center max-[767px]:text-[40px] max-[575px]:text-[35px] max-[420px]:text-[30px] max-[360px]:text-[28px]">
                 Explore <span className="relative text-[#6c7fd8]">Healthy</span>
                 <br />
                 &amp; Fresh Fruits
@@ -24,13 +27,13 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="order-1 mb-6 w-full px-3 min-[992px]:order-2 min-[992px]:w-[50%]">
-            <div className="relative flex justify-center pr-12.5 max-[991px]:px-12.5 max-[575px]:px-7.5 max-[420px]:p-0">
-              <img
-                src={HeroImage}
-                alt="Fresh fruits"
-                className="w-full pb-12.5 opacity-100 max-[1199px]:pr-7.5 max-[991px]:pr-0 max-[575px]:pb-7.5 max-[420px]:pb-3.75"
-              />
+          <div
+            className="order-1 w-full px-3 md:order-2 "
+            data-aos="zoom-in"
+            data-aos-delay="180"
+          >
+            <div className="relative flex justify-center md:pr-10 p-0">
+              <img src={HeroImage} alt="Fresh fruits" className="w-full" />
             </div>
           </div>
         </div>
